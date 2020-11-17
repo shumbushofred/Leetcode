@@ -1,0 +1,33 @@
+class Solution {
+    public String reverseWords(String s) {
+        
+      Stack<String> thestack = new Stack<String>();
+         String theword = "";
+        for(int i = 0; i < s.length();i++){
+            
+           if(s.charAt(i) != ' '){
+               theword = theword + s.charAt(i);
+           }else if(theword != ""){
+               
+               thestack.add(theword);
+               theword = "";
+           }
+        }
+    if(theword != ""){
+        thestack.add(theword);
+        String output = "";
+    }
+        String output = "";
+        while(!thestack.empty())
+        { 
+            if(output == ""){
+               output = output + thestack.pop(); 
+            }else{
+                output = output + " " + thestack.pop();
+            }
+            
+        }
+        return output;
+        
+    }
+}
